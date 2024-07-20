@@ -11,16 +11,16 @@
         <div class="calculator__output">0</div>
         <div class="calculator__keys">
             <div class="row__1">
-                <button class="calculator__key calculator__key--operator">+</button>
-                <button class="calculator__key calculator__key--operator">-</button>
-                <button class="calculator__key calculator__key--operator">&times;</button>
-                <button class="calculator__key calculator__key--operator">÷</button>
+                <button class="calculator__key calculator__key--operator" data-action="add">+</button>
+                <button class="calculator__key calculator__key--operator" data-action="subtract">-</button>
+                <button class="calculator__key calculator__key--operator" data-action="multiply">&times;</button>
+                <button class="calculator__key calculator__key--operator" data-action="divide">÷</button>
             </div>
             <div class="row__2">
                 <button class="calculator__key">7</button>
                 <button class="calculator__key">8</button>
                 <button class="calculator__key">9</button>
-                <button class="calculator__key">0</button>
+                <button class="calculator__key" data-action="backspace">0</button>
             </div>
             <div class="container">
                 <div class="subcontainer">
@@ -36,12 +36,12 @@
                     </div>
                     <div class="row__5">                         
                         <button class="calculator__key">0</button>
-                        <button class="calculator__key">.</button>
-                        <button class="calculator__key" style="padding-left: 5px; padding-right: 5px;">AC</button>
+                        <button class="calculator__key" data-action="decimal">.</button>
+                        <button class="calculator__key" style="padding-left: 5px; padding-right: 5px;" data-action="clear">AC</button>
                     </div>
                 </div>
                 <div class="enter__key">
-                    <button class="calculator__key calculator__key--enter"> = </button>
+                    <button class="calculator__key calculator__key--enter" data-action="calculate"> = </button>
                 </div>
             </div>
         </div>
