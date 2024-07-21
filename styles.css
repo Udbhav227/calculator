@@ -5,9 +5,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 50px;
+  min-height: 100vh;
   background-color: #eff2f5;
   transition: background 0.3s linear;
+  gap: 2rem;
+  margin: 0;
 }
 
 .heading {
@@ -15,6 +17,7 @@ body {
   transition: background 0.3s linear;
   font-size: 2.5rem;
   font-weight: bold;
+  /* margin-bottom: 1.2rem; */
 }
 
 .container {
@@ -73,10 +76,9 @@ body {
   margin: 0.2rem;
 }
 
-/* <----- DARK-MODE -----> */
-/* Dark mode styles */
+/* <----- DARK-MODE STYLES -----> */
 body.dark {
-  background:hsl(206, 14%, 41%);
+  background: hsl(206, 14%, 41%);
 }
 
 body.dark .calculator__output {
@@ -94,12 +96,12 @@ body.dark .calculator__key {
 }
 
 body.dark .calculator__key--operator {
-  background:hsl(208, 25%, 86%);
-  color: hsl(202, 11%, 29%); ;
+  background: hsl(208, 25%, 86%);
+  color: hsl(202, 11%, 29%);
 }
 
 body.dark .calculator__key--enter {
-  background:hsl(357, 100%, 72%);
+  background: hsl(357, 100%, 72%);
 }
 
 body.dark .heading {
@@ -139,7 +141,7 @@ body.dark .heading {
 }
 
 .checkbox-label {
-  background-color: hsl(202, 11%, 29%);;
+  background-color: hsl(202, 11%, 29%);
   width: 50px;
   height: 26px;
   border-radius: 50px;
@@ -150,8 +152,12 @@ body.dark .heading {
   align-items: center;
 }
 
-.fa-moon {color: #f1c40f;}
-.fa-sun {color: #f39c12;}
+.fa-moon {
+  color: #f1c40f;
+}
+.fa-sun {
+  color: #f39c12;
+}
 
 .checkbox-label .ball {
   background-color: #fff;
@@ -166,4 +172,19 @@ body.dark .heading {
 
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(24px);
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+a:link,
+a:visited {
+  color: hsl(202, 11%, 20%);
+}
+
+a:hover,
+a:active {
+  color: hsl(357, 100%, 72%);
 }
