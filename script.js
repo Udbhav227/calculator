@@ -30,9 +30,13 @@ keys.addEventListener('click', e => {
             }
             calculator.dataset.previousKeyType = 'decimal';
         }
-        
+
 
         if (action === 'clear') {
+            calculator.dataset.firstValue = '';
+            calculator.dataset.modValue = '';
+            calculator.dataset.operator = '';
+            calculator.dataset.previousKeyType = '';
             display.textContent = '0';
             calculator.dataset.previousKeyType = 'clear';
         }
@@ -40,6 +44,12 @@ keys.addEventListener('click', e => {
         if (action === 'backspace') {
             if (displayedNum !== '0') {
                 display.textContent = displayedNum.slice(0, -1) || '0';
+            }
+            calculator.dataset.previousKeyType = 'backspace';
+
+            // Update firstValue if we're not in the middle of an operation
+            if (previousKeyType !== 'operator') {
+                calculator.dataset.firstValue = display.textContent;
             }
         }
 
@@ -53,8 +63,8 @@ keys.addEventListener('click', e => {
             const operator = calculator.dataset.operator;
             const secondValue = displayedNum;
 
-            if (firstValue && 
-                operator && 
+            if (firstValue &&
+                operator &&
                 previousKeyType !== 'operator' &&
                 previousKeyType !== 'calculate'
             ) {
@@ -62,7 +72,7 @@ keys.addEventListener('click', e => {
                 display.textContent = calcValue;
                 calculator.dataset.firstValue = calcValue;
             } else {
-                calculator.dataset.firstValue = displayedNum; 
+                calculator.dataset.firstValue = displayedNum;
             }
 
             key.classList.add('.is-pressed');
@@ -75,13 +85,13 @@ keys.addEventListener('click', e => {
             const firstValue = calculator.dataset.firstValue;
             const operator = calculator.dataset.operator;
             const secondValue = displayedNum;
-            
+
             if (firstValue) {
                 if (previousKeyType === 'calculate') {
                     firstValue = displayedNum;
                 }
                 display.textContent = operate(parseFloat(firstValue), operator, parseFloat(secondValue));
-                
+
             }
 
             calculator.dataset.modValue = secondValue;
