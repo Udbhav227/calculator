@@ -10,9 +10,6 @@ keys.addEventListener('click', e => {
         const displayedNum = display.textContent;
         const previousKeyType = calculator.dataset.previousKeyType;
 
-        Array.from(key.parentNode.children)
-            .forEach(k => k.classList.remove('is-depressed'));
-
         if (!action) {
             if (displayedNum === '0' || previousKeyType === 'operator') {
                 display.textContent = keyContent;
@@ -75,7 +72,6 @@ keys.addEventListener('click', e => {
                 calculator.dataset.firstValue = displayedNum;
             }
 
-            key.classList.add('.is-pressed');
             calculator.dataset.previousKeyType = 'operator';
             calculator.dataset.firstValue = displayedNum;
             calculator.dataset.operator = action;
@@ -125,3 +121,9 @@ function operate(a, op, b) {
         case "divide": return divide(a, b);
     }
 }
+
+// Dark mode toggle
+const checkbox = document.getElementById("checkbox")
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark")
+})
