@@ -8,8 +8,9 @@ body {
   min-height: 100vh;
   background-color: #eff2f5;
   transition: background 0.3s linear;
-  gap: 2rem;
+  gap: 1rem;
   margin: 0;
+  text-align: center;
 }
 
 .heading {
@@ -17,7 +18,6 @@ body {
   transition: background 0.3s linear;
   font-size: 2.5rem;
   font-weight: bold;
-  /* margin-bottom: 1.2rem; */
 }
 
 .container {
