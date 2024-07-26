@@ -127,3 +127,66 @@ const checkbox = document.getElementById("checkbox")
 checkbox.addEventListener("change", () => {
     document.body.classList.toggle("dark")
 })
+
+// Keyboard support
+document.addEventListener('keydown', handleKeyboardInput);
+
+function handleKeyboardInput(e) {
+    const key = e.key;
+    let button;
+
+    // Map keyboard keys to calculator buttons
+    switch (key) {
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+            button = findButtonByText(key);
+            break;
+        case '+':
+            button = document.querySelector('[data-action="add"]');
+            break;
+        case '-':
+            button = document.querySelector('[data-action="subtract"]');
+            break;
+        case '*':
+            button = document.querySelector('[data-action="multiply"]');
+            break;
+        case '/':
+            button = document.querySelector('[data-action="divide"]');
+            break;
+        case '.':
+            button = document.querySelector('[data-action="decimal"]');
+            break;
+        case 'Enter':
+            button = document.querySelector('[data-action="calculate"]');
+            break;
+        case 'Backspace':
+            button = document.querySelector('[data-action="backspace"]');
+            break;
+        case 'Escape':
+            button = document.querySelector('[data-action="clear"]');
+            break;
+    }
+
+    if (button) {
+        button.click();
+        e.preventDefault();
+    }
+}
+
+function findButtonByText(text) {
+    const buttons = document.querySelectorAll('.calculator__key');
+    for (let button of buttons) {
+        if (button.textContent.trim() === text && !button.dataset.action) {
+            return button;
+        }
+    }
+    return null;
+}
