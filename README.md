@@ -19,7 +19,7 @@ This is a simple web-based calculator application. The project is designed to sh
 - **Basic Arithmetic Operations**: Supports addition, subtraction, multiplication, and division.
 - **Dark Mode**: Toggle between dark mode and light mode.
 - **Clear Button**: Resets the calculator display.
-- **Keyboard Support**: To-Do
+- **Keyboard Support**: Performs operation using keyboard.
 
 ## 📸 Screenshots 
 
@@ -36,4 +36,4 @@ This is a simple web-based calculator application. The project is designed to sh
 
 - **HTML**: Creating a structured layout for the application.
 - **CSS**: Styling the calculator to make it visually appealing using flexbox.
-- **JavaScript**: Adding interactivity to the application through DOM manipulation and keyboard related event listeners.
+- **JavaScript**: Adding interactivity to the application through DOM manipulation and event listeners.
